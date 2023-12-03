@@ -1,16 +1,13 @@
 import React, { useContext } from 'react';
 import { Context } from '../context/AppContext';
 import { Navigate } from 'react-router-dom';
+import Loader from './Loader';
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(Context);
 
   if (loading) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">
-        <span className="loading loading-spinner text-info loading-lg"></span>
-      </div>
-    );
+    return <Loader />;
   }
 
   if (!user) {
