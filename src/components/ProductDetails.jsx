@@ -7,6 +7,7 @@ const ProductDetails = () => {
   const { loading, setLoading } = useContext(Context);
   const [productDetails, setProductDetails] = useState({});
   const { id } = useParams();
+
   useEffect(() => {
     getProductDetails();
   }, []);
@@ -21,9 +22,8 @@ const ProductDetails = () => {
     return <Loader />;
   }
 
-  console.log(id);
   return (
-    <div className="max-w-5xl mx-auto pt-24 px-[15px] pb-32 lg:flex gap-5">
+    <div className="max-w-5xl mx-auto pt-24 px-[15px] pb-32 flex flex-col lg:flex-row gap-5">
       <div className="img-container relative lg:w-1/3" data-aos="fade-up">
         <img src={productDetails.image} alt={productDetails.name} className="w-full rounded-lg h-[250px] object-cover" />
         <div className="overlay bg-[#0B0B0B] bg-opacity-20 absolute bottom-0 left-0 right-0 top-0 rounded-lg p-[37px]"></div>

@@ -8,6 +8,7 @@ import Slider from './Slider';
 
 const CategoryProducts = () => {
   const { loading, setLoading } = useContext(Context);
+  const [categoryLoading, setCategoryLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const { name } = useParams();
   useEffect(() => {
@@ -19,19 +20,22 @@ const CategoryProducts = () => {
     console.log(res.data);
     setProducts(res.data);
     setLoading(false);
+    setCategoryLoading(false);
   }
 
   if (loading) {
     return <Loader />;
   }
+  if (categoryLoading & (products.length === 0)) {
+    return <Loader />;
+  }
 
-  console.log(name);
   return (
     <div className="bg-base-200">
       {products.length > 0 ? (
         <>
           <Slider />
-          <div className="max-w-[1440px] px-4 mx-auto py-12">
+          <div className="max-w-[1440px] px-4 mx-auto py-12 flex flex-wrap gap-6">
             {products.map(product => (
               <ProductCard key={product._id} product={product} />
             ))}

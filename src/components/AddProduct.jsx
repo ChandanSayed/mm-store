@@ -23,13 +23,22 @@ const AddProduct = () => {
         text: 'You added the product!',
         icon: 'success'
       });
+      setFormData({
+        image: '',
+        name: '',
+        brandName: '',
+        type: '',
+        price: '',
+        shortDescription: '',
+        rating: ''
+      });
     }
   };
   return (
     <div className="bg-base-200 py-20">
       <div className="shadow-2xl max-w-2xl bg-white mx-auto px-4 py-10 rounded-lg">
         <h2 className="text-2xl lg:text-4xl font-bold mb-6 text-center">Add Product</h2>
-        <ProductForm productHandler={addProductHandler} formData={formData} setFormData={setFormData} />
+        <ProductForm productHandler={addProductHandler} formData={formData} setFormData={setFormData} btnText={'Add Product'} />
       </div>
     </div>
   );

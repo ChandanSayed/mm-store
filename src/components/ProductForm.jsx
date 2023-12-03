@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ProductForm = ({ productHandler, formData, setFormData }) => {
+const ProductForm = ({ productHandler, formData, setFormData, btnText }) => {
   const [errors, setErrors] = useState({});
 
   const handleChange = e => {
@@ -66,7 +66,16 @@ const ProductForm = ({ productHandler, formData, setFormData }) => {
         <label htmlFor="brandName" className="block text-gray-700 text-sm font-bold mb-2">
           Brand Name
         </label>
-        <input type="text" id="brandName" name="brandName" value={formData.brandName} onChange={handleChange} className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500" />
+        <select id="brandName" name="brandName" value={formData.brandName.toLowerCase()} onChange={handleChange} className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500">
+          <option value="">Select Brand Name</option>
+          <option value="apple">Apple</option>
+          <option value="samsung">Samsung</option>
+          <option value="accer">Accer</option>
+          <option value="walton">Walton</option>
+          <option value="hp">HP</option>
+          <option value="dell">Dell</option>
+        </select>
+        {/* <input type="text" id="brandName" name="brandName" value={formData.brandName} onChange={handleChange} className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500" /> */}
         {errors.brandName && <p className="text-red-500 text-xs mt-1">{errors.brandName}</p>}
       </div>
 
@@ -74,7 +83,7 @@ const ProductForm = ({ productHandler, formData, setFormData }) => {
         <label htmlFor="type" className="block text-gray-700 text-sm font-bold mb-2">
           Type
         </label>
-        <select type="text" id="type" name="type" value={formData.type} onChange={handleChange} className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500">
+        <select id="type" name="type" value={formData.type} onChange={handleChange} className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500">
           <option value="">Select product type</option>
           <option value="phone">Phone</option>
           <option value="laptop">Laptop</option>
@@ -108,7 +117,7 @@ const ProductForm = ({ productHandler, formData, setFormData }) => {
 
       <div className="mb-4">
         <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Add
+          {btnText}
         </button>
       </div>
     </form>
