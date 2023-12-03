@@ -7,6 +7,7 @@ export const Context = createContext(null);
 export default function AppContext({ children }) {
   const [user, setUser] = useState('');
   const [userPhoto, setUserPhoto] = useState('');
+  const [loading, setLoading] = useState(true);
 
   const auth = getAuth(app);
   useEffect(() => {
@@ -17,13 +18,14 @@ export default function AppContext({ children }) {
         const uid = user.uid;
         setUser(user.displayName);
         setUserPhoto(user.photoURL);
+        setLoading(false);
         // ...
       } else {
         console.log('User is signed out');
       }
     });
   }, []);
-  return <Context.Provider value={{ user, userPhoto, setUser, setUserPhoto }}>{children}</Context.Provider>;
+  return <Context.Provider value={{ user, userPhoto, setUser, setUserPhoto, loading, setLoading }}>{children}</Context.Provider>;
 }
 
 // export default AppContext;

@@ -12,6 +12,7 @@ import CategoryProducts from './components/CategoryProducts.jsx';
 import Home from './components/Home.jsx';
 import { Router, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import AppContext from './context/AppContext.jsx';
+import ProductUpdate from './components/ProductUpdate.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: `/category-products/product-details/:id`,
+        path: `/products/product-details/:id`,
         element: (
           <PrivateRoute>
             <ProductDetails />
@@ -52,10 +53,18 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: `/category-products/:name`,
+        path: `/products/:name`,
         element: (
           <PrivateRoute>
             <CategoryProducts />
+          </PrivateRoute>
+        )
+      },
+      {
+        path: `/products/product-update/:id`,
+        element: (
+          <PrivateRoute>
+            <ProductUpdate />
           </PrivateRoute>
         )
       }
