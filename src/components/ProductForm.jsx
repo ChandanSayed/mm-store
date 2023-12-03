@@ -48,7 +48,7 @@ const ProductForm = ({ productHandler, formData, setFormData }) => {
     <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
       <div className="mb-4">
         <label htmlFor="image" className="block text-gray-700 text-sm font-bold mb-2">
-          Image
+          Image Link
         </label>
         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500" />
         {errors.image && <p className="text-red-500 text-xs mt-1">{errors.image}</p>}
