@@ -25,6 +25,7 @@ export default function AppContext({ children }) {
         // ...
       } else {
         console.log('User is signed out');
+        setLoading(false);
       }
     });
   }, []);
