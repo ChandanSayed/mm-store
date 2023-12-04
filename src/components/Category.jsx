@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Category = () => {
+const Category = ({ dark }) => {
   const brands = [
     {
       name: 'apple',
@@ -29,8 +29,8 @@ const Category = () => {
     }
   ];
   return (
-    <div className="px-4 my-12">
-      <h2 className="text-2xl lg:text-4xl mb-10 font-bold text-center">Available Brands</h2>
+    <div className={`px-4 py-12 ${dark ? 'bg-black' : ''}`}>
+      <h2 className={`text-2xl lg:text-4xl mb-10 font-bold text-center ${dark ? 'text-white' : ''}`}>Available Brands</h2>
       <div className="max-w-[1440px] mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
         {brands.map((brand, i) => {
           return (

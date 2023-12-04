@@ -3,14 +3,19 @@ import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import { Context } from '../context/AppContext';
 import { Navigate } from 'react-router-dom';
+import Loader from './Loader';
 
 const Login = () => {
-  const { user } = useContext(Context);
+  const { user, loading } = useContext(Context);
   const [login, setLogin] = useState(true);
 
   function handleForm(e) {
     e.preventDefault();
     setLogin(prev => !prev);
+  }
+
+  if (loading) {
+    return <Loader />;
   }
 
   if (user) {

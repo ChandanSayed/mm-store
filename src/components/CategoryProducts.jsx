@@ -26,6 +26,7 @@ const CategoryProducts = () => {
   if (loading) {
     return <Loader />;
   }
+
   if (categoryLoading & (products.length === 0)) {
     return <Loader />;
   }

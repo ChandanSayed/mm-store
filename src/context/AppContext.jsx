@@ -9,6 +9,7 @@ export default function AppContext({ children }) {
   const [uId, setUId] = useState('');
   const [userPhoto, setUserPhoto] = useState('');
   const [loading, setLoading] = useState(true);
+  const [dark, setDark] = useState(false);
 
   const auth = getAuth(app);
   useEffect(() => {
@@ -27,7 +28,7 @@ export default function AppContext({ children }) {
       }
     });
   }, []);
-  return <Context.Provider value={{ user, userPhoto, setUser, setUserPhoto, loading, setLoading, uId }}>{children}</Context.Provider>;
+  return <Context.Provider value={{ dark, setDark, user, userPhoto, setUser, setUserPhoto, loading, setLoading, uId }}>{children}</Context.Provider>;
 }
 
 // export default AppContext;
