@@ -36,7 +36,7 @@ const CategoryProducts = () => {
       {products.length > 0 ? (
         <>
           <Slider />
-          <div className="max-w-[1440px] px-4 mx-auto py-12 flex flex-wrap gap-6">
+          <div className="max-w-[1440px] px-4 mx-auto py-12 flex flex-wrap gap-6 justify-center">
             {products.map(product => (
               <ProductCard key={product._id} product={product} />
             ))}
