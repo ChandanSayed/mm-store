@@ -15,7 +15,7 @@ const AddProduct = () => {
   });
 
   const addProductHandler = async () => {
-    const res = await axios.post('http://localhost:5500/add-product', formData);
+    const res = await axios.post('https://mm-store-server.onrender.com/add-product', formData);
     console.log(res);
     if (res.data.acknowledged) {
       Swal.fire({

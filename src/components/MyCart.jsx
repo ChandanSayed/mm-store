@@ -17,12 +17,12 @@ const MyCart = () => {
   }, [updateCart]);
 
   async function getCartItems() {
-    const res = await axios.get(`http://localhost:5500/cartItems/${uId}`);
+    const res = await axios.get(`https://mm-store-server.onrender.com/cartItems/${uId}`);
     setItems(res.data);
   }
 
   async function handleDelete(id) {
-    const res = await axios.delete(`http://localhost:5500/cartItems/${id}`);
+    const res = await axios.delete(`https://mm-store-server.onrender.com/cartItems/${id}`);
     if (res.data.deletedCount) {
       Swal.fire({
         title: 'Congrats!',

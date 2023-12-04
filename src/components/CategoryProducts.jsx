@@ -16,7 +16,7 @@ const CategoryProducts = () => {
   }, []);
 
   async function getProductsAccordingToCategory() {
-    const res = await axios.get(`http://localhost:5500/products/${name}`);
+    const res = await axios.get(`https://mm-store-server.onrender.com/products/${name}`);
     console.log(res.data);
     setProducts(res.data);
     setLoading(false);

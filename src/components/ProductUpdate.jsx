@@ -21,7 +21,7 @@ const ProductUpdate = () => {
 
   const UpdateProductHandler = async () => {
     console.log(id);
-    const res = await axios.put(`http://localhost:5500/products/product-update/${id}`, formData);
+    const res = await axios.put(`https://mm-store-server.onrender.com/products/product-update/${id}`, formData);
     console.log(res.data);
     if (res.data) {
       Swal.fire({
@@ -45,7 +45,7 @@ const ProductUpdate = () => {
     getProductDetails();
   }, []);
   async function getProductDetails() {
-    const res = await axios.get(`http://localhost:5500/products/product-details/${id}`);
+    const res = await axios.get(`https://mm-store-server.onrender.com/products/product-details/${id}`);
     console.log(res.data);
     setFormData(res.data);
     setLoading(false);
