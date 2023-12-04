@@ -6,6 +6,7 @@ export const Context = createContext(null);
 
 export default function AppContext({ children }) {
   const [user, setUser] = useState('');
+  const [uId, setUId] = useState('');
   const [userPhoto, setUserPhoto] = useState('');
   const [loading, setLoading] = useState(true);
 
@@ -16,6 +17,7 @@ export default function AppContext({ children }) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
         const uid = user.uid;
+        setUId(uid);
         setUser(user.displayName);
         setUserPhoto(user.photoURL);
         setLoading(false);
@@ -25,7 +27,7 @@ export default function AppContext({ children }) {
       }
     });
   }, []);
-  return <Context.Provider value={{ user, userPhoto, setUser, setUserPhoto, loading, setLoading }}>{children}</Context.Provider>;
+  return <Context.Provider value={{ user, userPhoto, setUser, setUserPhoto, loading, setLoading, uId }}>{children}</Context.Provider>;
 }
 
 // export default AppContext;
