@@ -15,7 +15,7 @@ import AppContext from './context/AppContext.jsx';
 import ProductUpdate from './components/ProductUpdate.jsx';
 
 import axios from 'axios';
-axios.defaults.baseURL = 'https://mm-store-server.vercel.app';
+axios.defaults.baseURL = 'https://mm-store-server.onrender.com';
 
 const router = createBrowserRouter([
   {
