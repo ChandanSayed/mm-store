@@ -15,7 +15,7 @@ const AddProduct = () => {
   });
 
   const addProductHandler = async () => {
-    const res = await axios.post('https://mm-store-server.onrender.com/add-product', formData);
+    const res = await axios.post('https://mm-store-server.vercel.app/add-product', formData);
     console.log(res);
     if (res.data.acknowledged) {
       Swal.fire({
