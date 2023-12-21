@@ -18,8 +18,6 @@ const Header = () => {
       });
   }
 
-  console.log(dark);
-
   const navItems = (
     <>
       <li>

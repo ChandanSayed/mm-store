@@ -14,6 +14,9 @@ import { Router, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import AppContext from './context/AppContext.jsx';
 import ProductUpdate from './components/ProductUpdate.jsx';
 
+import axios from 'axios';
+axios.defaults.baseURL = 'https://mm-store-server.vercel.app';
+
 const router = createBrowserRouter([
   {
     path: '/',

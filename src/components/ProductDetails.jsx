@@ -12,7 +12,7 @@ const ProductDetails = () => {
     getProductDetails();
   }, []);
   async function getProductDetails() {
-    const res = await axios.get(`https://mm-store-server.vercel.app/products/product-details/${id}`);
+    const res = await axios.get(`/products/product-details/${id}`);
     setProductDetails(res.data);
     setLoading(false);
   }
@@ -23,7 +23,7 @@ const ProductDetails = () => {
 
   async function handleAddToCart() {
     const { image, price, name } = productDetails;
-    const res = await axios.post('https://mm-store-server.vercel.app/cartItems', { uId, image, price, name });
+    const res = await axios.post('/cartItems', { uId, image, price, name });
     if (res.data.acknowledged) {
       Swal.fire({
         title: 'Congrats!',

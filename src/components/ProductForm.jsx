@@ -39,7 +39,6 @@ const ProductForm = ({ productHandler, formData, setFormData, btnText }) => {
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
     } else {
-      console.log('Form submitted:', formData);
       productHandler();
     }
   };

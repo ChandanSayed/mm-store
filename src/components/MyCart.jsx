@@ -17,12 +17,12 @@ const MyCart = () => {
   }, [updateCart]);
 
   async function getCartItems() {
-    const res = await axios.get(`https://mm-store-server.vercel.app/cartItems/${uId}`);
+    const res = await axios.get(`/cartItems/${uId}`);
     setItems(res.data);
   }
 
   async function handleDelete(id) {
-    const res = await axios.delete(`https://mm-store-server.vercel.app/cartItems/${id}`);
+    const res = await axios.delete(`/cartItems/${id}`);
     if (res.data.deletedCount) {
       Swal.fire({
         title: 'Congrats!',

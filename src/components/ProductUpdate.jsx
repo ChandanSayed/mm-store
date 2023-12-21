@@ -20,9 +20,7 @@ const ProductUpdate = () => {
   });
 
   const UpdateProductHandler = async () => {
-    console.log(id);
-    const res = await axios.put(`https://mm-store-server.vercel.app/products/product-update/${id}`, formData);
-    console.log(res.data);
+    const res = await axios.put(`/products/product-update/${id}`, formData);
     if (res.data) {
       Swal.fire({
         title: 'Congrats!',
@@ -45,8 +43,7 @@ const ProductUpdate = () => {
     getProductDetails();
   }, []);
   async function getProductDetails() {
-    const res = await axios.get(`https://mm-store-server.vercel.app/products/product-details/${id}`);
-    console.log(res.data);
+    const res = await axios.get(`/products/product-details/${id}`);
     setFormData(res.data);
     setLoading(false);
   }

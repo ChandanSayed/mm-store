@@ -16,8 +16,7 @@ const CategoryProducts = () => {
   }, []);
 
   async function getProductsAccordingToCategory() {
-    const res = await axios.get(`https://mm-store-server.vercel.app/products/${name}`);
-    console.log(res.data);
+    const res = await axios.get(`/products/${name}`);
     setProducts(res.data);
     setLoading(false);
     setCategoryLoading(false);

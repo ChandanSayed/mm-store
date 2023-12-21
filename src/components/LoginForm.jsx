@@ -12,7 +12,6 @@ const LoginForm = () => {
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   const { setUser, setUserPhoto, user } = useContext(Context);
-  console.log(user);
 
   function handleGoogleSignIn() {
     signInWithPopup(auth, provider)
@@ -24,7 +23,6 @@ const LoginForm = () => {
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
         // ...
-        console.log(user);
       })
       .catch(error => {
         // Handle Errors here.
@@ -46,7 +44,6 @@ const LoginForm = () => {
       .then(userCredential => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
         setSuccess('Login successful!');
         setUser(user.displayName);
         setUserPhoto(user.photoURL);

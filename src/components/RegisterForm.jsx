@@ -24,7 +24,6 @@ const RegisterForm = () => {
       .then(userCredential => {
         // Signed up
         const user = userCredential.user;
-        console.log(user);
         setSuccess('User registration successful!');
 
         updateProfile(user, {
