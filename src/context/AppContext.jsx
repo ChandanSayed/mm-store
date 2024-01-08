@@ -31,5 +31,3 @@ export default function AppContext({ children }) {
   }, []);
   return <Context.Provider value={{ dark, setDark, user, userPhoto, setUser, setUserPhoto, loading, setLoading, uId }}>{children}</Context.Provider>;
 }
-
-// export default AppContext;

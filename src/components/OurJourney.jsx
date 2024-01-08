@@ -3,8 +3,10 @@ import React from 'react';
 const OurJourney = ({ dark }) => {
   return (
     <div className={`px-4 py-12 ${dark ? 'bg-black' : ''}`}>
-      <h2 className={`text-2xl lg:text-4xl mb-10 font-bold text-center ${dark ? 'text-white' : ''}`}>Our Journey</h2>
-      <ul className="timeline timeline-vertical max-w-[392px] my-10 mx-auto px-4">
+      <h2 data-aos="fade-up" className={`text-2xl lg:text-4xl mb-10 font-bold text-center ${dark ? 'text-white' : ''}`}>
+        Our Journey
+      </h2>
+      <ul data-aos="fade-up" className="timeline timeline-vertical max-w-[392px] my-10 mx-auto px-4">
         <li>
           <div className={`timeline-start ${dark ? 'text-white' : ''}`}>2015</div>
           <div className="timeline-middle">
